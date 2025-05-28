@@ -1,0 +1,31 @@
+<script>
+    var c = 5; // Seconds
+    function count_down(){
+        if (c <= 0){
+            window.location = "https://sites.google.com/view/danssyte";
+            return;
+        }
+        var Ele = document.querySelector("#T");
+        Ele.innerHTML = `(${c}s)`;
+        c -= 1;
+        setTimeout(count_down,1000);
+    }  
+    window.addEventListener("load",count_down);
+</script>
+<style>    
+    .screen { 
+        display:flex; flex-direction:column; height:100vh;
+        justify-content:center; align-items:center; 
+        font-size:1.5rem; }
+    .center { 
+        text-align:center; }
+    .big { 
+        font-size:4rem; }
+</style>
+<div class="screen">
+    <div class="center big">Dan's</div>
+    <div class="center big">Community-based University</div>
+    <div class="center"><u>http://dans.cbu.net</u></div>
+    <div class="center">Redirecting... <span id="T"></span></div>
+</div>
+<!-- EOF -->
